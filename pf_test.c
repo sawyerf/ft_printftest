@@ -6,155 +6,183 @@ extern int		test;
 
 void	test_d(int nb)
 {
-	pf_print_d("%d",		nb);
-	pf_print_d("%+d",		nb);
-	pf_print_d("%0+d",		nb);
-	pf_print_d("%-d",		nb);
-	pf_print_d("%0d",		nb);
-	pf_print_d("%- .5d",	nb);
-	pf_print_d("%- .5d",	nb);
-	pf_print_d("% .2d",		nb);
-	pf_print_d("%-5d", 		nb);
-	pf_print_d("%2d", 		nb);
-	pf_print_d("% 03d",		nb);
-	pf_print_d("%-0.5d",	nb);
-	pf_print_d("%0.5d",		nb);
-	pf_print_d("%0.2d",		nb);
-	pf_print_d("%-+10.5d",	nb);
-	pf_print_d("% 5.5d",	nb);
-	pf_print_d("% 5d",		nb);
-	pf_print_d("%.d",		nb);
-	pf_print_d("%0 +.d",	nb);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%d",		nb);
+	ADD_PRINTF("%+d",		nb);
+	ADD_PRINTF("%0+d",		nb);
+	ADD_PRINTF("%-d",		nb);
+	ADD_PRINTF("%0d",		nb);
+	ADD_PRINTF("%- .5d",	nb);
+	ADD_PRINTF("%- .5d",	nb);
+	ADD_PRINTF("% .2d",		nb);
+	ADD_PRINTF("%-5d", 		nb);
+	ADD_PRINTF("%2d", 		nb);
+	ADD_PRINTF("% 03d",		nb);
+	ADD_PRINTF("%-0.5d",	nb);
+	ADD_PRINTF("%0.5d",		nb);
+	ADD_PRINTF("%0.2d",		nb);
+	ADD_PRINTF("%-+10.5d",	nb);
+	ADD_PRINTF("% 5.5d",	nb);
+	ADD_PRINTF("% 5d",		nb);
+	ADD_PRINTF("%.d",		nb);
+	ADD_PRINTF("%0 +.d",	nb);
 }
 
 void	test_u(unsigned long u)
 {
-	pf_print_u("%u",		u);
-	pf_print_u("%+u",		u);
-	pf_print_u("%0+u",		u);
-	pf_print_u("%-u",		u);
-	pf_print_u("%0u",		u);
-	pf_print_u("%.5u",		u);
-	pf_print_u("%.2u",		u);
-	pf_print_u("%5u",		u);
-	pf_print_u("%2u",		u);
-	pf_print_u("% 03u",		u);
-	pf_print_u("%0.5u", 	u);
-	pf_print_u("%0.2u", 	u);
-	pf_print_u("%-+10.5u",	u);
-	pf_print_u("% 5.5u",	u);
-	pf_print_u("% 5u",		u);
-	pf_print_u("%.u",		u);
-	pf_print_u("%-10.5u",	u);
-	pf_print_u("%-10.5u", 	u);
-	pf_print_u("%08u", 		u);
-	pf_print_u("%0.5u", 	u);
-	pf_print_u("%0.2u", 	u);
-	pf_print_u("%-+10.5u",	u);
-	pf_print_u("% 5.5u", 	u);
-	pf_print_u("% 5u", 		u);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%u",		u);
+	ADD_PRINTF("%+u",		u);
+	ADD_PRINTF("%0+u",		u);
+	ADD_PRINTF("%-u",		u);
+	ADD_PRINTF("%0u",		u);
+	ADD_PRINTF("%.5u",		u);
+	ADD_PRINTF("%.2u",		u);
+	ADD_PRINTF("%5u",		u);
+	ADD_PRINTF("%2u",		u);
+	ADD_PRINTF("% 03u",		u);
+	ADD_PRINTF("%0.5u", 	u);
+	ADD_PRINTF("%0.2u", 	u);
+	ADD_PRINTF("%-+10.5u",	u);
+	ADD_PRINTF("% 5.5u",	u);
+	ADD_PRINTF("% 5u",		u);
+	ADD_PRINTF("%.u",		u);
+	ADD_PRINTF("%-10.5u",	u);
+	ADD_PRINTF("%-10.5u", 	u);
+	ADD_PRINTF("%08u", 		u);
+	ADD_PRINTF("%0.5u", 	u);
+	ADD_PRINTF("%0.2u", 	u);
+	ADD_PRINTF("%-+10.5u",	u);
+	ADD_PRINTF("% 5.5u", 	u);
+	ADD_PRINTF("% 5u", 		u);
 }
 
 void	test_p(void *addr)
 {
-	pf_print_p("%p",		addr);
-	pf_print_p("%30p",		addr);
-	pf_print_p("%30.30p",	addr);
-	pf_print_p("%0-50p",	addr);
-	pf_print_p("%# 0-50p",	addr);
-	pf_print_p("%5.2p",		addr);
-	pf_print_p("% -5p", 	addr);
-	pf_print_p("%0 -5p", 	addr);
-	pf_print_p("%0 -.5p",	addr);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%p",		addr);
+	ADD_PRINTF("%30p",		addr);
+	ADD_PRINTF("%30.30p",	addr);
+	ADD_PRINTF("%0-50p",	addr);
+	ADD_PRINTF("%# 0-50p",	addr);
+	ADD_PRINTF("%5.2p",		addr);
+	ADD_PRINTF("% -5p", 	addr);
+	ADD_PRINTF("%0 -5p", 	addr);
+	ADD_PRINTF("%0 -.5p",	addr);
 }
 
 void	test_f(float fl)
 {
-	pf_print_f("%f",		fl);
-	pf_print_f("%+f",		fl);
-	pf_print_f("%0+f",		fl);
-	pf_print_f("%-f",		fl);
-	pf_print_f("%0f",		fl);
-	pf_print_f("%.5f",		fl);
-	pf_print_f("%.2f",		fl);
-	pf_print_f("%5f",		fl);
-	pf_print_f("%2f",		fl);
-	pf_print_f("% 03f",		fl);
-	pf_print_f("%0.5f", 	fl);
-	pf_print_f("%0.2f", 	fl);
-	pf_print_f("%-+10.5f",	fl);
-	pf_print_f("% 5.5f",	fl);
-	pf_print_f("% 5f",		fl);
-	pf_print_f("%.f",		fl);
-	pf_print_f("%-10.5f",	fl);
-	pf_print_f("%-10.5f", 	fl);
-	pf_print_f("%08f", 		fl);
-	pf_print_f("%0.5f", 	fl);
-	pf_print_f("%0.2f", 	fl);
-	pf_print_f("%-+10.5f",	fl);
-	pf_print_f("% 5.5f", 	fl);
-	pf_print_f("% 5f", 		fl);
-	pf_print_f("%F",		fl);
-	pf_print_f("%+F",		fl);
-	pf_print_f("%0+F",		fl);
-	pf_print_f("%-F",		fl);
-	pf_print_f("%0F",		fl);
-	pf_print_f("%.5F",		fl);
-	pf_print_f("%.2F",		fl);
-	pf_print_f("%5F",		fl);
-	pf_print_f("%2F",		fl);
-	pf_print_f("% 03F",		fl);
-	pf_print_f("%0.5F", 	fl);
-	pf_print_f("%0.2F", 	fl);
-	pf_print_f("%-+10.5F",	fl);
-	pf_print_f("% 5.5F",	fl);
-	pf_print_f("% 5F",		fl);
-	pf_print_f("%.F",		fl);
-	pf_print_f("%-10.5F",	fl);
-	pf_print_f("%-10.5F", 	fl);
-	pf_print_f("%08F", 		fl);
-	pf_print_f("%0.5F", 	fl);
-	pf_print_f("%0.2F", 	fl);
-	pf_print_f("%-+10.5F",	fl);
-	pf_print_f("% 5.5F", 	fl);
-	pf_print_f("% 5F", 		fl);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%f",		fl);
+	ADD_PRINTF("%+f",		fl);
+	ADD_PRINTF("%0+f",		fl);
+	ADD_PRINTF("%-f",		fl);
+	ADD_PRINTF("%0f",		fl);
+	ADD_PRINTF("%.5f",		fl);
+	ADD_PRINTF("%.2f",		fl);
+	ADD_PRINTF("%5f",		fl);
+	ADD_PRINTF("%2f",		fl);
+	ADD_PRINTF("% 03f",		fl);
+	ADD_PRINTF("%0.5f", 	fl);
+	ADD_PRINTF("%0.2f", 	fl);
+	ADD_PRINTF("%-+10.5f",	fl);
+	ADD_PRINTF("% 5.5f",	fl);
+	ADD_PRINTF("% 5f",		fl);
+	ADD_PRINTF("%.f",		fl);
+	ADD_PRINTF("%-10.5f",	fl);
+	ADD_PRINTF("%-10.5f", 	fl);
+	ADD_PRINTF("%08f", 		fl);
+	ADD_PRINTF("%0.5f", 	fl);
+	ADD_PRINTF("%0.2f", 	fl);
+	ADD_PRINTF("%-+10.5f",	fl);
+	ADD_PRINTF("% 5.5f", 	fl);
+	ADD_PRINTF("% 5f", 		fl);
+	ADD_PRINTF("%F",		fl);
+	ADD_PRINTF("%+F",		fl);
+	ADD_PRINTF("%0+F",		fl);
+	ADD_PRINTF("%-F",		fl);
+	ADD_PRINTF("%0F",		fl);
+	ADD_PRINTF("%.5F",		fl);
+	ADD_PRINTF("%.2F",		fl);
+	ADD_PRINTF("%5F",		fl);
+	ADD_PRINTF("%2F",		fl);
+	ADD_PRINTF("% 03F",		fl);
+	ADD_PRINTF("%0.5F", 	fl);
+	ADD_PRINTF("%0.2F", 	fl);
+	ADD_PRINTF("%-+10.5F",	fl);
+	ADD_PRINTF("% 5.5F",	fl);
+	ADD_PRINTF("% 5F",		fl);
+	ADD_PRINTF("%.F",		fl);
+	ADD_PRINTF("%-10.5F",	fl);
+	ADD_PRINTF("%-10.5F", 	fl);
+	ADD_PRINTF("%08F", 		fl);
+	ADD_PRINTF("%0.5F", 	fl);
+	ADD_PRINTF("%0.2F", 	fl);
+	ADD_PRINTF("%-+10.5F",	fl);
+	ADD_PRINTF("% 5.5F", 	fl);
+	ADD_PRINTF("% 5F", 		fl);
 }
 
 void	test_s(char *str){
-	pf_print_s("%s",		str);
-	pf_print_s("%.2s",		str);
-	pf_print_s("%-15s",		str);
-	pf_print_s("%5.2s",		str);
-	pf_print_s("%2.2s",		str);
-	pf_print_s("%.5s",		str);
-	pf_print_s("%2s",		str);
-	pf_print_s("%5s.",		str);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%s",		str);
+	ADD_PRINTF("%.2s",		str);
+	ADD_PRINTF("%-15s",		str);
+	ADD_PRINTF("%5.2s",		str);
+	ADD_PRINTF("%2.2s",		str);
+	ADD_PRINTF("%.5s",		str);
+	ADD_PRINTF("%2s",		str);
+	ADD_PRINTF("%5s.",		str);
 }
 
 void	test_c(char c){
-	pf_print_c("%c",		c);
-	pf_print_c("%5c", 		c);
-	pf_print_c("%-5c", 		c);
-	pf_print_c("% 05c",		c);
-	pf_print_c("% 5c", 		c);
-	pf_print_c("%.5c", 		c);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%c",		c);
+	ADD_PRINTF("%5c", 		c);
+	ADD_PRINTF("%-5c", 		c);
+	ADD_PRINTF("% 05c",		c);
+	ADD_PRINTF("% 5c", 		c);
+	ADD_PRINTF("%.5c", 		c);
 }
 
 void	test_x(unsigned int nb){
-	pf_print_x("%x",		nb);
-	pf_print_x("%5x",		nb);
-	pf_print_x("%5.5x",		nb);
-	pf_print_x("%-05.x",	nb);
-	pf_print_x("%- 5.x",	nb);
-	pf_print_x("%+ 5.x",	nb);
-	pf_print_x("%+ .x",		nb);
-	pf_print_x("%.x",		nb);
-	pf_print_x("%X",		nb);
-	pf_print_x("%5X",		nb);
-	pf_print_x("%5.5X",		nb);
-	pf_print_x("%-05.X",	nb);
-	pf_print_x("%- 5.X",	nb);
-	pf_print_x("%+ 5.X",	nb);
-	pf_print_x("%+ .X",		nb);
-	pf_print_x("%.X",		nb);
+	int		lol;
+	int		lol2;
+	clock_t	t;
+	
+	ADD_PRINTF("%x",		nb);
+	ADD_PRINTF("%5x",		nb);
+	ADD_PRINTF("%5.5x",		nb);
+	ADD_PRINTF("%-05.x",	nb);
+	ADD_PRINTF("%- 5.x",	nb);
+	ADD_PRINTF("%+ 5.x",	nb);
+	ADD_PRINTF("%+ .x",		nb);
+	ADD_PRINTF("%.x",		nb);
+	ADD_PRINTF("%X",		nb);
+	ADD_PRINTF("%5X",		nb);
+	ADD_PRINTF("%5.5X",		nb);
+	ADD_PRINTF("%-05.X",	nb);
+	ADD_PRINTF("%- 5.X",	nb);
+	ADD_PRINTF("%+ 5.X",	nb);
+	ADD_PRINTF("%+ .X",		nb);
+	ADD_PRINTF("%.X",		nb);
 }
