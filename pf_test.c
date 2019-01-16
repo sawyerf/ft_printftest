@@ -3,6 +3,7 @@
 extern clock_t time1;
 extern clock_t time2;
 extern int		test;
+extern int		error;
 
 void	test_d(int nb)
 {

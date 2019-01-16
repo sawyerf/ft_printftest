@@ -6,7 +6,7 @@
 /*   By: apeyret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:05:44 by apeyret           #+#    #+#             */
-/*   Updated: 2018/12/11 16:52:02 by Sawyerf                                  */
+/*   Updated: 2019/01/16 17:46:07 by apeyret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@
 	time2 += clock() - t; \
 	printf("|\n"); \
 	if (lol != lol2) \
+	{ \
+		error++; \
 		ft_printf("\x1b[31m [ERROR] %s, %d != %d\x1b[0m\n", x, lol, lol2); \
+	} \
 	else \
 		ft_printf("\x1b[32m [GOOD] %s\x1b[0m\n", x);
 

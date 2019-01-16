@@ -3,6 +3,7 @@
 clock_t time1 = 0;
 clock_t time2 = 0;
 int		test = 0;
+int		error = 0;
 
 int	main(int ac, char **av)
 {
@@ -54,4 +55,5 @@ int	main(int ac, char **av)
 	printf("[time]    printf = %f\n", t2);
 	printf("[time]    %f\n", t1/t2);
 	printf("[time]    %f\n", (t2/t1) * 100);
+	printf("[error]   %d\n", error);
 }
