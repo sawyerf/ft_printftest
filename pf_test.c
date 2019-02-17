@@ -4,11 +4,13 @@ extern clock_t time1;
 extern clock_t time2;
 extern int		test;
 extern int		error;
+char			*str;
+char			*str2;
 
 void	test_d(int nb)
 {
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%d",		nb);
@@ -34,8 +36,8 @@ void	test_d(int nb)
 
 void	test_u(unsigned long u)
 {
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%u",		u);
@@ -66,8 +68,8 @@ void	test_u(unsigned long u)
 
 void	test_p(void *addr)
 {
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%p",		addr);
@@ -83,8 +85,8 @@ void	test_p(void *addr)
 
 void	test_f(float fl)
 {
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%f",		fl);
@@ -138,8 +140,8 @@ void	test_f(float fl)
 }
 
 void	test_s(char *str){
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%s",		str);
@@ -149,12 +151,12 @@ void	test_s(char *str){
 	ADD_PRINTF("%2.2s",		str);
 	ADD_PRINTF("%.5s",		str);
 	ADD_PRINTF("%2s",		str);
-	ADD_PRINTF("%5s.",		str);
+	ADD_PRINTF("%5s",		str);
 }
 
 void	test_c(char c){
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%c",		c);
@@ -166,8 +168,8 @@ void	test_c(char c){
 }
 
 void	test_x(unsigned int nb){
-	int		lol;
-	int		lol2;
+	int		ret;
+	int		ret2;
 	clock_t	t;
 	
 	ADD_PRINTF("%x",		nb);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printftest.h                                                             */
+/*   printftest.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apeyret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:05:44 by apeyret           #+#    #+#             */
-/*   Updated: 2019/01/16 17:46:07 by apeyret          ###   ########.fr       */
+/*   Updated: 2019/02/17 22:12:10 by alarm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,33 @@
 
 # include <stdio.h>
 # include <time.h>
+# include <fcntl.h>
 # include "libft.h"
 
 # define ADD_PRINTF(x, ...) \
+	ret = 0; \
+	ret2 = 0; \
 	test++; \
-	ft_printf("\x1b[0mft_printf: |"); \
 	t = clock(); \
-	lol = ft_printf(x, __VA_ARGS__); \
+	ret = ft_printf(x, __VA_ARGS__); \
 	time1 += clock() - t; \
-	ft_printf("|\n"); \
-	printf("   printf: |"); \
 	t = clock(); \
-	lol2 = printf(x, __VA_ARGS__); \
+	str = get_stdout(); \
+	ret2 = printf(x, __VA_ARGS__); \
 	time2 += clock() - t; \
-	printf("|\n"); \
-	if (lol != lol2) \
+	str2 = get_stdout(); \
+	if (ret != ret2 || (str && str2 && strcmp(str, str2))) \
 	{ \
 		error++; \
-		ft_printf("\x1b[31m [ERROR] %s, %d != %d\x1b[0m\n", x, lol, lol2); \
+		dprintf(2, "\x1b[0mft_printf: |%s|\n", str); \
+		dprintf(2, "   printf: |%s|\n", str2); \
+		if (ret != ret2) \
+			dprintf(2, "\x1b[31m [ERROR] %s, %d != %d\x1b[0m\n", x, ret, ret2); \
+		else \
+			dprintf(2, "\x1b[31m [ERROR] %s\x1b[0m\n", x); \
 	} \
-	else \
-		ft_printf("\x1b[32m [GOOD] %s\x1b[0m\n", x);
+	ft_strdel(&str); \
+	ft_strdel(&str2);
 
 int		ft_printf(const char *s, ...);
 
@@ -46,4 +52,7 @@ void	test_d(int var);
 void	test_p(void  *var);
 void	test_f(float var);
 void	test_u(unsigned long var);
+
+void	cpt_stdout(void);
+char	*get_stdout(void);
 #endif

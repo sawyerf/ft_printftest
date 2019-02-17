@@ -3,6 +3,7 @@ NAME = test
 FT_PRINTF = ../ft_printf/
 
 SRC =	main.c \
+		stdout.c \
 		pf_test.c
 
 CC = gcc

@@ -10,6 +10,7 @@ int	main(int ac, char **av)
 	int count;
 	int max;
 
+	cpt_stdout();
 	if (ac > 1)
 		max = ft_atoi(av[1]);
 	else
@@ -50,10 +51,10 @@ int	main(int ac, char **av)
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
     float t2 = ((float)time2)/CLOCKS_PER_SEC;
-	printf("for %d tests:\n", test);
-	printf("[time] ft_printf = %f\n", t1);
-	printf("[time]    printf = %f\n", t2);
-	printf("[time]    %f\n", t1/t2);
-	printf("[time]    %f\n", (t2/t1) * 100);
-	printf("[error]   %d\n", error);
+	dprintf(2, "for %d tests:\n", test);
+	dprintf(2, "[time] ft_printf = %f\n", t1);
+	dprintf(2, "[time]    printf = %f\n", t2);
+	dprintf(2, "[time]    %f\n", t1/t2);
+	dprintf(2, "[time]    %f\n", (t2/t1) * 100);
+	dprintf(2, "[error]   %d\n", error);
 }
