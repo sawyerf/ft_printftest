@@ -6,7 +6,7 @@
 /*   By: apeyret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:05:44 by apeyret           #+#    #+#             */
-/*   Updated: 2019/02/17 22:12:10 by alarm            ###   ########.fr       */
+/*   Updated: 2019/02/17 23:57:54 by alarm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 	t = clock(); \
 	ret = ft_printf(x, __VA_ARGS__); \
 	time1 += clock() - t; \
-	t = clock(); \
 	str = get_stdout(); \
+	t = clock(); \
 	ret2 = printf(x, __VA_ARGS__); \
 	time2 += clock() - t; \
 	str2 = get_stdout(); \
