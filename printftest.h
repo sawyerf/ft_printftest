@@ -6,7 +6,7 @@
 /*   By: apeyret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:05:44 by apeyret           #+#    #+#             */
-/*   Updated: 2019/02/17 23:57:54 by alarm            ###   ########.fr       */
+/*   Updated: 2019/02/19 21:17:27 by apeyret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,17 @@
 # include "libft.h"
 
 # define ADD_PRINTF(x, ...) \
+	if (debug) \
+		dprintf(2, "\x1b[32m [START] %s\x1b[0m\n", x); \
 	ret = 0; \
 	ret2 = 0; \
 	test++; \
 	t = clock(); \
-	ret = ft_printf(x, __VA_ARGS__); \
+	ret = ft_printf(x, ##__VA_ARGS__); \
 	time1 += clock() - t; \
 	str = get_stdout(); \
 	t = clock(); \
-	ret2 = printf(x, __VA_ARGS__); \
+	ret2 = printf(x, ##__VA_ARGS__); \
 	time2 += clock() - t; \
 	str2 = get_stdout(); \
 	if (ret != ret2 || (str && str2 && strcmp(str, str2))) \
@@ -52,6 +54,7 @@ void	test_d(int var);
 void	test_p(void  *var);
 void	test_f(float var);
 void	test_u(unsigned long var);
+void	lot_test(void);
 
 void	cpt_stdout(void);
 char	*get_stdout(void);

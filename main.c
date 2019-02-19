@@ -4,6 +4,7 @@ clock_t time1 = 0;
 clock_t time2 = 0;
 int		test = 0;
 int		error = 0;
+int		debug = 0;
 
 int	main(int ac, char **av)
 {
@@ -11,8 +12,19 @@ int	main(int ac, char **av)
 	int max;
 
 	cpt_stdout();
+	count = 1;
 	if (ac > 1)
-		max = ft_atoi(av[1]);
+	{
+		if (!ft_strcmp("-d", av[count]))
+		{
+			debug = 1;
+			count++;
+		}
+		if (av[count] && isdigit(av[count][0]))
+			max = ft_atoi(av[count]);
+		else
+			max = 1;
+	}
 	else
 		max = 1;
 	count = 0;
@@ -48,6 +60,7 @@ int	main(int ac, char **av)
 		test_d(1232);
 		test_d(-100);
 		test_d(-2);
+		lot_test();
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
     float t2 = ((float)time2)/CLOCKS_PER_SEC;

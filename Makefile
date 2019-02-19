@@ -8,7 +8,7 @@ SRC =	main.c \
 
 CC = gcc
 
-CFLAGS = -I . -I $(FT_PRINTF) -I $(FT_PRINTF)libft/
+CFLAGS = -w -I . -I $(FT_PRINTF) -I $(FT_PRINTF)libft/
 
 OBJ = $(SRC:.c=.o)
 
