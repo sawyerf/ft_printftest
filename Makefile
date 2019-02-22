@@ -1,39 +1,61 @@
-NAME = test 
+FT_PRINTF =	../ft_printf/
+INC_FT_PRINTF =	$(FT_PRINTF)
 
-FT_PRINTF = ../ft_printf/
+NAME =		test
 
-SRC =	main.c \
-		stdout.c \
-		tool.c \
-		pf_test.c
+CC =		gcc
 
-CC = gcc
+CFLAGS =	-w -I inc/ -I $(INC_FT_PRINTF)
 
-CFLAGS = -w -I . -I $(FT_PRINTF)
+DEBUG =		#-g3 -fsanitize=address
 
-OBJ = $(SRC:.c=.o)
+INC_DIR =	inc
+
+INC_FILE =	printftest.h
+
+SRC_DIR =	src
+
+SRC_FILE =	main.c \
+			pf_test.c \
+			stdout.c \
+			tool.c
+
+OBJ_DIR =	.obj
+OBJ_FILE =	$(SRC_FILE:.c=.o)
+
+CRT_DIR =	.
+
+SRC = 		$(addprefix $(SRC_DIR)/,$(SRC_FILE))
+INC = 		$(addprefix $(INC_DIR)/,$(INC_FILE))
+OBJ = 		$(addprefix $(OBJ_DIR)/,$(OBJ_FILE))
+CRT = 		$(addprefix $(OBJ_DIR)/,$(CRT_DIR))
 
 all: $(NAME)
 
-%.o: %.c
-	@printf "\033[0;32m[Printftest] Compilation [o.]\r"
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "\033[0;32m[Printftest] Compilation [.o]\r"
-
 printre:
-	@make -C $(FT_PRINTF) re
+	@make -C $(FT_PRINTF)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC) Makefile
+	@printf "\033[0;32m[ft_printftest] Compilation [o.]\033[0;0m\r"
+	@mkdir -p $(CRT) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf "\033[0;32m[ft_printftest] Compilation [.o]\033[0;0m\r"
 
 $(NAME): printre $(OBJ)
-	@printf "[Printftest] Compilation [OK]\n"
-	@gcc $(CFLAGS) $(OBJ) $(FT_PRINTF)libftprintf.a -o $(NAME)
+	@printf "\033[0;32m[ft_printftest] Compilation [OK]\033[0;0m\n"
+	@make -C $(FT_PRINTF)
+	@gcc $(CFLAGS) $(DEBUG) $(OBJ) $(FT_PRINTF)libftprintf.a -o $(NAME)
 
 clean:
+	@make -C $(FT_PRINTF) clean
 	@/bin/rm -f $(OBJ)
-	@printf "\033[0;31m[Printftest] Deleted *.o\n"
+	@/bin/rm -rf $(OBJ_DIR)
+	@printf "\033[0;31m[ft_printftest] Deleted *.o\033[0;0m\n"
 
 fclean: clean
+	@make -C $(FT_PRINTF) fclean 
 	@/bin/rm -f $(NAME)
-	@printf "\033[0;31D[Printftest] Deleted ft_printf.a\n"
+	@printf "\033[0;31D[ft_printftest] Deleted ft_printftest\033[0;0m\n"
 
 re: fclean all
 
