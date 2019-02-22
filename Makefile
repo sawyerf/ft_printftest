@@ -4,11 +4,12 @@ FT_PRINTF = ../ft_printf/
 
 SRC =	main.c \
 		stdout.c \
+		tool.c \
 		pf_test.c
 
 CC = gcc
 
-CFLAGS = -w -I . -I $(FT_PRINTF) -I $(FT_PRINTF)libft/
+CFLAGS = -w -I . -I $(FT_PRINTF)
 
 OBJ = $(SRC:.c=.o)
 
@@ -24,7 +25,7 @@ printre:
 
 $(NAME): printre $(OBJ)
 	@printf "[Printftest] Compilation [OK]\n"
-	@gcc $(CFLAGS) $(OBJ) $(FT_PRINTF)libftprintf.a $(FT_PRINTF)libft/libft.a -o $(NAME)
+	@gcc $(CFLAGS) $(OBJ) $(FT_PRINTF)libftprintf.a -o $(NAME)
 
 clean:
 	@/bin/rm -f $(OBJ)

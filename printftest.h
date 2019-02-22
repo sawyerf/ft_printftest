@@ -6,7 +6,7 @@
 /*   By: apeyret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:05:44 by apeyret           #+#    #+#             */
-/*   Updated: 2019/02/19 21:17:27 by apeyret          ###   ########.fr       */
+/*   Updated: 2019/02/22 16:06:44 by apeyret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdio.h>
 # include <time.h>
 # include <fcntl.h>
-# include "libft.h"
 
 # define ADD_PRINTF(x, ...) \
 	if (debug) \
@@ -42,8 +41,8 @@
 		else \
 			dprintf(2, "\x1b[31m [ERROR] %s\x1b[0m\n", x); \
 	} \
-	ft_strdel(&str); \
-	ft_strdel(&str2);
+	strdel(&str); \
+	strdel(&str2);
 
 int		ft_printf(const char *s, ...);
 
@@ -58,4 +57,6 @@ void	lot_test(void);
 
 void	cpt_stdout(void);
 char	*get_stdout(void);
+
+void	strdel(char	**s);
 #endif

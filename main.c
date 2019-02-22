@@ -15,13 +15,13 @@ int	main(int ac, char **av)
 	count = 1;
 	if (ac > 1)
 	{
-		if (!ft_strcmp("-d", av[count]))
+		if (!strcmp("-d", av[count]))
 		{
 			debug = 1;
 			count++;
 		}
 		if (av[count] && isdigit(av[count][0]))
-			max = ft_atoi(av[count]);
+			max = atoi(av[count]);
 		else
 			max = 1;
 	}
@@ -39,7 +39,7 @@ int	main(int ac, char **av)
 		test_s("");
 		test_s(NULL);
 		//%p
-		test_p(ft_strdup("abc"));
+		test_p(strdup("abc"));
 		test_p(ft_printf);
 		test_p(NULL);
 		test_p(0);
