@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void	ft_strdel(char **s)
+void	strdel(char **s)
 {
 	if (!s || !*s)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: apeyret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:05:44 by apeyret           #+#    #+#             */
-/*   Updated: 2019/02/22 16:06:44 by apeyret          ###   ########.fr       */
+/*   Updated: 2019/02/22 16:10:36 by apeyret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <time.h>
+# include <unistd.h>
 # include <fcntl.h>
 
 # define ADD_PRINTF(x, ...) \
