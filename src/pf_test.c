@@ -8,6 +8,48 @@ extern int		debug;
 char			*str;
 char			*str2;
 
+void	test_Z(void)
+{
+	int		ret;
+	int		ret2;
+	clock_t	t;
+	
+	ADD_PRINTF("% Z", 123);
+	ADD_PRINTF("%#Z", 123);
+	ADD_PRINTF("%-Z", 123);
+	ADD_PRINTF("%+Z", 123);
+	ADD_PRINTF("%0Z", 123);
+	ADD_PRINTF("%3Z", 123);
+	ADD_PRINTF("%10Z", 123);
+	ADD_PRINTF("%.Z", 123);
+	ADD_PRINTF("%.0Z", 123);
+	ADD_PRINTF("%.3Z", 123);
+	ADD_PRINTF("%.10Z", 123);
+	ADD_PRINTF("% #Z", 123);
+	ADD_PRINTF("% -Z", 123);
+	ADD_PRINTF("% +Z", 123);
+	ADD_PRINTF("%#-Z", 123);
+	ADD_PRINTF("%#+Z", 123);
+	ADD_PRINTF("%-+Z", 123);
+	ADD_PRINTF("%+0Z", 123);
+	ADD_PRINTF("%03Z", 123);
+	ADD_PRINTF("%010Z", 123);
+	ADD_PRINTF("% #-Z", 123);
+	ADD_PRINTF("% -+Z", 123);
+	ADD_PRINTF("%#-+Z", 123);
+	ADD_PRINTF("%-+0Z", 123);
+	ADD_PRINTF("%+03Z", 123);
+	ADD_PRINTF("%+010Z", 123);
+	ADD_PRINTF("% #-+Z", 123);
+	ADD_PRINTF("%#-+0Z", 123);
+	ADD_PRINTF("%-+03Z", 123);
+	ADD_PRINTF("%-+010Z", 123);
+	ADD_PRINTF("% #-+0Z", 123);
+	ADD_PRINTF("%#-+03Z", 123);
+	ADD_PRINTF("%#-+010Z", 123);
+	ADD_PRINTF("% #-+03Z", 123);
+	ADD_PRINTF("% #-+010Z", 123);
+}
 void	test_d(int nb)
 {
 	int		ret;
@@ -114,7 +156,7 @@ void	test_f(float fl)
 	ADD_PRINTF("%-+10.5f",	fl);
 	ADD_PRINTF("% 5.5f", 	fl);
 	ADD_PRINTF("% 5f", 		fl);
-	ADD_PRINTF("%F",		fl);
+/*	ADD_PRINTF("%F",		fl);
 	ADD_PRINTF("%+F",		fl);
 	ADD_PRINTF("%0+F",		fl);
 	ADD_PRINTF("%-F",		fl);
@@ -137,7 +179,7 @@ void	test_f(float fl)
 	ADD_PRINTF("%0.2F", 	fl);
 	ADD_PRINTF("%-+10.5F",	fl);
 	ADD_PRINTF("% 5.5F", 	fl);
-	ADD_PRINTF("% 5F", 		fl);
+	ADD_PRINTF("% 5F", 		fl);*/
 }
 
 void	test_s(char *var)
@@ -256,7 +298,6 @@ void	lot_test(void)
 	ADD_PRINTF("%x", 2147483647);
 	ADD_PRINTF("%p", 0);
 	ADD_PRINTF("%%", 1);
-	ADD_PRINTF("%Z", 123);
 	ADD_PRINTF("%BLABLABLABLA");
 	ADD_PRINTF("% d", 0);
 	ADD_PRINTF("%#d", 0);
@@ -885,17 +926,6 @@ void	lot_test(void)
 	ADD_PRINTF("%.0%");
 	ADD_PRINTF("%.3%");
 	ADD_PRINTF("%.10%");
-	ADD_PRINTF("% Z", 123);
-	ADD_PRINTF("%#Z", 123);
-	ADD_PRINTF("%-Z", 123);
-	ADD_PRINTF("%+Z", 123);
-	ADD_PRINTF("%0Z", 123);
-	ADD_PRINTF("%3Z", 123);
-	ADD_PRINTF("%10Z", 123);
-	ADD_PRINTF("%.Z", 123);
-	ADD_PRINTF("%.0Z", 123);
-	ADD_PRINTF("%.3Z", 123);
-	ADD_PRINTF("%.10Z", 123);
 	ADD_PRINTF("% BLABLABLABLA");
 	ADD_PRINTF("%#BLABLABLABLA");
 	ADD_PRINTF("%-BLABLABLABLA");
@@ -1420,15 +1450,6 @@ void	lot_test(void)
 	ADD_PRINTF("%+0%");
 	ADD_PRINTF("%03%");
 	ADD_PRINTF("%010%");
-	ADD_PRINTF("% #Z", 123);
-	ADD_PRINTF("% -Z", 123);
-	ADD_PRINTF("% +Z", 123);
-	ADD_PRINTF("%#-Z", 123);
-	ADD_PRINTF("%#+Z", 123);
-	ADD_PRINTF("%-+Z", 123);
-	ADD_PRINTF("%+0Z", 123);
-	ADD_PRINTF("%03Z", 123);
-	ADD_PRINTF("%010Z", 123);
 	ADD_PRINTF("% #BLABLABLABLA");
 	ADD_PRINTF("% -BLABLABLABLA");
 	ADD_PRINTF("% +BLABLABLABLA");
@@ -1780,12 +1801,6 @@ void	lot_test(void)
 	ADD_PRINTF("%-+0%");
 	ADD_PRINTF("%+03%");
 	ADD_PRINTF("%+010%");
-	ADD_PRINTF("% #-Z", 123);
-	ADD_PRINTF("% -+Z", 123);
-	ADD_PRINTF("%#-+Z", 123);
-	ADD_PRINTF("%-+0Z", 123);
-	ADD_PRINTF("%+03Z", 123);
-	ADD_PRINTF("%+010Z", 123);
 	ADD_PRINTF("% #-BLABLABLABLA");
 	ADD_PRINTF("% -+BLABLABLABLA");
 	ADD_PRINTF("%#-+BLABLABLABLA");
@@ -2020,10 +2035,6 @@ void	lot_test(void)
 	ADD_PRINTF("%#-+0%");
 	ADD_PRINTF("%-+03%");
 	ADD_PRINTF("%-+010%");
-	ADD_PRINTF("% #-+Z", 123);
-	ADD_PRINTF("%#-+0Z", 123);
-	ADD_PRINTF("%-+03Z", 123);
-	ADD_PRINTF("%-+010Z", 123);
 	ADD_PRINTF("% #-+BLABLABLABLA");
 	ADD_PRINTF("%#-+0BLABLABLABLA");
 	ADD_PRINTF("%-+03BLABLABLABLA");
@@ -2199,9 +2210,6 @@ void	lot_test(void)
 	ADD_PRINTF("% #-+0%");
 	ADD_PRINTF("%#-+03%");
 	ADD_PRINTF("%#-+010%");
-	ADD_PRINTF("% #-+0Z", 123);
-	ADD_PRINTF("%#-+03Z", 123);
-	ADD_PRINTF("%#-+010Z", 123);
 	ADD_PRINTF("% #-+0BLABLABLABLA");
 	ADD_PRINTF("%#-+03BLABLABLABLA");
 	ADD_PRINTF("%#-+010BLABLABLABLA");
@@ -2319,8 +2327,6 @@ void	lot_test(void)
 	ADD_PRINTF("% #-+010p", 0);
 	ADD_PRINTF("% #-+03%");
 	ADD_PRINTF("% #-+010%");
-	ADD_PRINTF("% #-+03Z", 123);
-	ADD_PRINTF("% #-+010Z", 123);
 	ADD_PRINTF("% #-+03BLABLABLABLA");
 	ADD_PRINTF("% #-+010BLABLABLABLA");
 }

@@ -60,6 +60,8 @@ int	main(int ac, char **av)
 		test_d(1232);
 		test_d(-100);
 		test_d(-2);
+		//%Z
+		test_Z();
 		lot_test();
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
