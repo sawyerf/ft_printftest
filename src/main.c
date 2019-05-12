@@ -33,6 +33,8 @@ int	main(int ac, char **av)
 		//%d
 		test_d(-2147483648);
 		test_d(2147483647);
+		test_d(4294967295);
+		test_d(4294967295 + 589);
 		test_d(-2147483648 - 1);
 		test_d(-2147483648 - 15);
 		test_d(1232);
@@ -74,15 +76,20 @@ int	main(int ac, char **av)
 		test_x(4294967295 + 589);
 		test_x(42);
 		//%u
-		test_d(1232);
-		test_d(-100);
-		test_d(-2);
+		test_u(0);
+		test_u(42);
+		test_u(-1526);
+		test_u(4294967295);
+		test_u(4294967295 + 589);
+		test_u(1232);
+		test_u(-100);
+		test_u(-2);
 		//%o
-		test_x(0);
-		test_x(42);
-		test_x(-1526);
-		test_x(4294967295);
-		test_x(4294967295 + 589);
+		test_o(0);
+		test_o(42);
+		test_o(-1526);
+		test_o(4294967295);
+		test_o(4294967295 + 589);
 		//%Z
 		test_Z();
 		//other
