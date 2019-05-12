@@ -5,6 +5,7 @@
 # include <time.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <string.h>
 
 # define ADD_PRINTF(x, ...) \
 	if (debug) \
@@ -42,8 +43,10 @@ void	test_d(int var);
 void	test_p(void  *var);
 void	test_f(float var);
 void	test_u(unsigned long var);
+void	test_o(unsigned long var);
 void	test_Z(void);
-void	lot_test(void);
+void	other_test(void);
+void	activita_test(void);
 
 void	cpt_stdout(void);
 char	*get_stdout(void);

@@ -31,15 +31,27 @@ int	main(int ac, char **av)
 	while (count++ < max)
 	{
 		//%d
+		test_d(-2147483648);
+		test_d(2147483647);
+		test_d(-2147483648 - 1);
+		test_d(-2147483648 - 15);
 		test_d(1232);
 		test_d(-100);
 		test_d(-2);
 		//%s
+		char *s = malloc(sizeof(char) * 10000 + 1);
+		memset(s, '*', 10000);
+		test_s("abc\0efg");
+		free(s);
+		test_s("abc\0efg");
 		test_s("abc");
 		test_s("");
 		test_s(NULL);
+		test_s(0);
 		//%p
-		test_p(strdup("abc"));
+		void *p = strdup("abc");
+		test_p(p);
+		free(p);
 		test_p(ft_printf);
 		test_p(NULL);
 		test_p(0);
@@ -48,21 +60,34 @@ int	main(int ac, char **av)
 		test_f(0.0);
 		test_f(0.00000000001);
 		test_f(-0.00000000001);
-		test_f(-1);
+		test_f(-1.0003333);
+		test_f(1.00 / 3.00);
 		//%c
-		test_c(42);
-		test_c(0);
+		test_x(0);
+		test_x('*');
+		test_x('!');
+		test_x(-55);
 		//%x
-		test_x(42);
 		test_x(0);
 		test_x(-1526);
+		test_x(4294967295);
+		test_x(4294967295 + 589);
+		test_x(42);
 		//%u
 		test_d(1232);
 		test_d(-100);
 		test_d(-2);
+		//%o
+		test_x(0);
+		test_x(42);
+		test_x(-1526);
+		test_x(4294967295);
+		test_x(4294967295 + 589);
 		//%Z
 		test_Z();
-		lot_test();
+		//other
+		other_test();
+		activita_test();
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
     float t2 = ((float)time2)/CLOCKS_PER_SEC;

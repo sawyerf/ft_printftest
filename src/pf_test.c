@@ -1,5 +1,10 @@
 #include "printftest.h"
- 
+
+/* 
+I use my test and the test of :
+- https://github.com/acivita/test_ft_printf
+*/
+
 extern clock_t time1;
 extern clock_t time2;
 extern int		test;
@@ -50,31 +55,143 @@ void	test_Z(void)
 	ADD_PRINTF("% #-+03Z", 123);
 	ADD_PRINTF("% #-+010Z", 123);
 }
+
+void	test_o(unsigned long o)
+{
+	int		ret;
+	int		ret2;
+	clock_t	t;
+
+	ADD_PRINTF("%o",		o);
+	ADD_PRINTF("%.o",		o);
+	ADD_PRINTF("%-o",		o);
+	ADD_PRINTF("%-+o",		o);
+	ADD_PRINTF("%+o",		o);
+	ADD_PRINTF("%#o",		o);
+	ADD_PRINTF("%#-o",		o);
+	ADD_PRINTF("%#-+o",		o);
+	ADD_PRINTF("%#+o",		o);
+	ADD_PRINTF("% o",		o);
+	ADD_PRINTF("% -o",		o);
+	ADD_PRINTF("% -+o",		o);
+	ADD_PRINTF("% +o",		o);
+	ADD_PRINTF("% #o",		o);
+	ADD_PRINTF("% #-o",		o);
+	ADD_PRINTF("% #-+o",		o);
+	ADD_PRINTF("%3o",		o);
+	ADD_PRINTF("%.3o",		o);
+	ADD_PRINTF("%10o",		o);
+	ADD_PRINTF("%.10o",		o);
+	ADD_PRINTF("%0o",		o);
+	ADD_PRINTF("%.0o",		o);
+	ADD_PRINTF("%-+0o",		o);
+	ADD_PRINTF("%+0o",		o);
+	ADD_PRINTF("%#-+0o",		o);
+	ADD_PRINTF("% #-+0o",		o);
+	ADD_PRINTF("%03o",		o);
+	ADD_PRINTF("%-+03o",		o);
+	ADD_PRINTF("%+03o",		o);
+	ADD_PRINTF("%#-+03o",		o);
+	ADD_PRINTF("% #-+03o",		o);
+	ADD_PRINTF("%010o",		o);
+	ADD_PRINTF("%-+010o",		o);
+	ADD_PRINTF("%+010o",		o);
+	ADD_PRINTF("%#-+010o",		o);
+	ADD_PRINTF("% #-+010o",		o);
+}
+
 void	test_d(int nb)
 {
 	int		ret;
 	int		ret2;
 	clock_t	t;
-	
-	ADD_PRINTF("%d",		nb);
-	ADD_PRINTF("%+d",		nb);
-	ADD_PRINTF("%0+d",		nb);
-	ADD_PRINTF("%-d",		nb);
-	ADD_PRINTF("%0d",		nb);
-	ADD_PRINTF("%- .5d",	nb);
-	ADD_PRINTF("%- .5d",	nb);
-	ADD_PRINTF("% .2d",		nb);
-	ADD_PRINTF("%-5d", 		nb);
-	ADD_PRINTF("%2d", 		nb);
-	ADD_PRINTF("% 03d",		nb);
-	ADD_PRINTF("%-0.5d",	nb);
-	ADD_PRINTF("%0.5d",		nb);
-	ADD_PRINTF("%0.2d",		nb);
-	ADD_PRINTF("%-+10.5d",	nb);
-	ADD_PRINTF("% 5.5d",	nb);
-	ADD_PRINTF("% 5d",		nb);
-	ADD_PRINTF("%.d",		nb);
-	ADD_PRINTF("%0 +.d",	nb);
+
+	ADD_PRINTF("%d",			nb);
+	ADD_PRINTF("%+d",			nb);
+	ADD_PRINTF("%0+d",			nb);
+	ADD_PRINTF("%-d",			nb);
+	ADD_PRINTF("%0d",			nb);
+	ADD_PRINTF("%- .5d",		nb);
+	ADD_PRINTF("% .2d",			nb);
+	ADD_PRINTF("%-5d",			nb);
+	ADD_PRINTF("%2d",			nb);
+	ADD_PRINTF("% 03d",			nb);
+	ADD_PRINTF("%-0.5d",		nb);
+	ADD_PRINTF("%0.5d",			nb);
+	ADD_PRINTF("%0.2d",			nb);
+	ADD_PRINTF("%-+10.5d",		nb);
+	ADD_PRINTF("% 5.5d",		nb);
+	ADD_PRINTF("% 5d",			nb);
+	ADD_PRINTF("%.d",			nb);
+	ADD_PRINTF("%0 +.d",		nb);
+	ADD_PRINTF("% #-+03d",		nb);
+	ADD_PRINTF("% #-+010d",		nb);
+	ADD_PRINTF("% d",			nb);
+	ADD_PRINTF("%#d",			nb);
+	ADD_PRINTF("%3d",			nb);
+	ADD_PRINTF("%10d",			nb);
+	ADD_PRINTF("%.0d",			nb);
+	ADD_PRINTF("%.3d",			nb);
+	ADD_PRINTF("%.10d",			nb);
+	ADD_PRINTF("% #-d",			nb);
+	ADD_PRINTF("% -+d",			nb);
+	ADD_PRINTF("%#-+d",			nb);
+	ADD_PRINTF("%-+0d",			nb);
+	ADD_PRINTF("%+03d",			nb);
+	ADD_PRINTF("%+010d",		nb);
+	ADD_PRINTF("% #-+d",		nb);
+	ADD_PRINTF("%#-+0d",		nb);
+	ADD_PRINTF("%-+03d",		nb);
+	ADD_PRINTF("%-+010d",		nb);
+	ADD_PRINTF("% #-+0d",		nb);
+	ADD_PRINTF("%#-+03d",		nb);
+	ADD_PRINTF("%#-+010d",		nb);
+	ADD_PRINTF("% #d",			nb);
+	ADD_PRINTF("% -d",			nb);
+	ADD_PRINTF("% +d",			nb);
+	ADD_PRINTF("%#-d",			nb);
+	ADD_PRINTF("%#+d",			nb);
+	ADD_PRINTF("%-+d",			nb);
+	ADD_PRINTF("%+0d",			nb);
+	ADD_PRINTF("%03d",			nb);
+	ADD_PRINTF("%010d",			nb);
+	ADD_PRINTF("% #-+0i",		nb);
+	ADD_PRINTF("%#-+03i",		nb);
+	ADD_PRINTF("%#-+010i",		nb);
+	ADD_PRINTF("% #-+03i",		nb);
+	ADD_PRINTF("% #-+010i",		nb);
+	ADD_PRINTF("%i",			nb);
+	ADD_PRINTF("% i",			nb);
+	ADD_PRINTF("%#i",			nb);
+	ADD_PRINTF("%-i",			nb);
+	ADD_PRINTF("%+i",			nb);
+	ADD_PRINTF("%0i",			nb);
+	ADD_PRINTF("%3i",			nb);
+	ADD_PRINTF("%10i",			nb);
+	ADD_PRINTF("%.i",			nb);
+	ADD_PRINTF("%.0i",			nb);
+	ADD_PRINTF("%.3i",			nb);
+	ADD_PRINTF("%.10i",			nb);
+	ADD_PRINTF("% #i",			nb);
+	ADD_PRINTF("% -i",			nb);
+	ADD_PRINTF("% +i",			nb);
+	ADD_PRINTF("%#-i",			nb);
+	ADD_PRINTF("%#+i",			nb);
+	ADD_PRINTF("%-+i",			nb);
+	ADD_PRINTF("%+0i",			nb);
+	ADD_PRINTF("%03i",			nb);
+	ADD_PRINTF("%010i",			nb);
+	ADD_PRINTF("% #-+i",		nb);
+	ADD_PRINTF("%#-+0i",		nb);
+	ADD_PRINTF("%-+03i",		nb);
+	ADD_PRINTF("%-+010i",		nb);
+	ADD_PRINTF("% #-i",			nb);
+	ADD_PRINTF("% -+i",			nb);
+	ADD_PRINTF("%#-+i",			nb);
+	ADD_PRINTF("%-+0i",			nb);
+	ADD_PRINTF("%+03i",			nb);
+	ADD_PRINTF("%+010i",		nb);
+	ADD_PRINTF("%+010i",		nb);
 }
 
 void	test_u(unsigned long u)
@@ -84,29 +201,57 @@ void	test_u(unsigned long u)
 	clock_t	t;
 	
 	ADD_PRINTF("%u",		u);
-	ADD_PRINTF("%+u",		u);
-	ADD_PRINTF("%0+u",		u);
-	ADD_PRINTF("%-u",		u);
-	ADD_PRINTF("%0u",		u);
-	ADD_PRINTF("%.5u",		u);
-	ADD_PRINTF("%.2u",		u);
-	ADD_PRINTF("%5u",		u);
-	ADD_PRINTF("%2u",		u);
-	ADD_PRINTF("% 03u",		u);
-	ADD_PRINTF("%0.5u", 	u);
-	ADD_PRINTF("%0.2u", 	u);
-	ADD_PRINTF("%-+10.5u",	u);
-	ADD_PRINTF("% 5.5u",	u);
-	ADD_PRINTF("% 5u",		u);
 	ADD_PRINTF("%.u",		u);
-	ADD_PRINTF("%-10.5u",	u);
+	ADD_PRINTF("%-u",		u);
+	ADD_PRINTF("%-+u",		u);
+	ADD_PRINTF("%+u",		u);
+	ADD_PRINTF("%#u",		u);
+	ADD_PRINTF("%#-u",		u);
+	ADD_PRINTF("%#-+u",		u);
+	ADD_PRINTF("%#+u",		u);
+	ADD_PRINTF("% u",		u);
+	ADD_PRINTF("% -u",		u);
+	ADD_PRINTF("% -+u",		u);
+	ADD_PRINTF("% +u",		u);
+	ADD_PRINTF("% #u",		u);
+	ADD_PRINTF("% #-u",		u);
+	ADD_PRINTF("% #-+u",	u);
+	ADD_PRINTF("%5u",		u);
+	ADD_PRINTF("%.5u",		u);
+	ADD_PRINTF("% 5u", 		u);
+	ADD_PRINTF("% 5u",		u);
+	ADD_PRINTF("% 5.5u", 	u);
+	ADD_PRINTF("% 5.5u",	u);
+	ADD_PRINTF("%3u",		u);
+	ADD_PRINTF("%.3u",		u);
+	ADD_PRINTF("%2u",		u);
+	ADD_PRINTF("%.2u",		u);
+	ADD_PRINTF("%10u",		u);
+	ADD_PRINTF("%.10u",		u);
 	ADD_PRINTF("%-10.5u", 	u);
+	ADD_PRINTF("%-10.5u",	u);
+	ADD_PRINTF("%-+10.5u",	u);
+	ADD_PRINTF("%0u",		u);
+	ADD_PRINTF("%.0u",		u);
+	ADD_PRINTF("%-+0u",		u);
+	ADD_PRINTF("%+0u",		u);
+	ADD_PRINTF("%#-+0u",	u);
+	ADD_PRINTF("% #-+0u",	u);
+	ADD_PRINTF("%0+u",		u);
 	ADD_PRINTF("%08u", 		u);
 	ADD_PRINTF("%0.5u", 	u);
+	ADD_PRINTF("%03u",		u);
+	ADD_PRINTF("%-+03u",	u);
+	ADD_PRINTF("%+03u",		u);
+	ADD_PRINTF("%#-+03u",	u);
+	ADD_PRINTF("% 03u",		u);
+	ADD_PRINTF("% #-+03u",	u);
 	ADD_PRINTF("%0.2u", 	u);
-	ADD_PRINTF("%-+10.5u",	u);
-	ADD_PRINTF("% 5.5u", 	u);
-	ADD_PRINTF("% 5u", 		u);
+	ADD_PRINTF("%010u",		u);
+	ADD_PRINTF("%-+010u",	u);
+	ADD_PRINTF("%+010u",	u);
+	ADD_PRINTF("%#-+010u",	u);
+	ADD_PRINTF("% #-+010u",	u);
 }
 
 void	test_p(void  *addr)
@@ -124,6 +269,42 @@ void	test_p(void  *addr)
 	ADD_PRINTF("% -5p", 	addr);
 	ADD_PRINTF("%0 -5p", 	addr);
 	ADD_PRINTF("%0 -.5p",	addr);
+	ADD_PRINTF("%p",		addr);
+	ADD_PRINTF("% p",		addr);
+	ADD_PRINTF("%#p",		addr);
+	ADD_PRINTF("%-p",		addr);
+	ADD_PRINTF("%+p",		addr);
+	ADD_PRINTF("%0p",		addr);
+	ADD_PRINTF("%3p",		addr);
+	ADD_PRINTF("%10p",		addr);
+	ADD_PRINTF("%.p",		addr);
+	ADD_PRINTF("%.0p",		addr);
+	ADD_PRINTF("%.3p",		addr);
+	ADD_PRINTF("%.10p",		addr);
+	ADD_PRINTF("% #p",		addr);
+	ADD_PRINTF("% -p",		addr);
+	ADD_PRINTF("% +p",		addr);
+	ADD_PRINTF("%#-p",		addr);
+	ADD_PRINTF("%#+p",		addr);
+	ADD_PRINTF("%-+p",		addr);
+	ADD_PRINTF("%+0p",		addr);
+	ADD_PRINTF("%03p",		addr);
+	ADD_PRINTF("%010p",		addr);
+	ADD_PRINTF("% #-p",		addr);
+	ADD_PRINTF("% -+p",		addr);
+	ADD_PRINTF("%#-+p",		addr);
+	ADD_PRINTF("%-+0p",		addr);
+	ADD_PRINTF("%+03p",		addr);
+	ADD_PRINTF("%+010p",	addr);
+	ADD_PRINTF("% #-+p",	addr);
+	ADD_PRINTF("%#-+0p",	addr);
+	ADD_PRINTF("%-+03p",	addr);
+	ADD_PRINTF("%-+010p",	addr);
+	ADD_PRINTF("% #-+0p",	addr);
+	ADD_PRINTF("%#-+03p",	addr);
+	ADD_PRINTF("%#-+010p",	addr);
+	ADD_PRINTF("% #-+03p",	addr);
+	ADD_PRINTF("% #-+010p",	addr);
 }
 
 void	test_f(float fl)
@@ -189,13 +370,49 @@ void	test_s(char *var)
 	clock_t	t;
 	
 	ADD_PRINTF("%s",		var);
-	ADD_PRINTF("%.2s",		var);
-	ADD_PRINTF("%-15s",		var);
-	ADD_PRINTF("%5.2s",		var);
-	ADD_PRINTF("%2.2s",		var);
-	ADD_PRINTF("%.5s",		var);
-	ADD_PRINTF("%2s",		var);
+	ADD_PRINTF("%s",		var);
+	ADD_PRINTF("%.s",		var);
+	ADD_PRINTF("%-s",		var);
+	ADD_PRINTF("%-+s",		var);
+	ADD_PRINTF("%+s",		var);
+	ADD_PRINTF("%#s",		var);
+	ADD_PRINTF("%#-s",		var);
+	ADD_PRINTF("%#-+s",		var);
+	ADD_PRINTF("%#+s",		var);
+	ADD_PRINTF("% s",		var);
+	ADD_PRINTF("% -s",		var);
+	ADD_PRINTF("% -+s",		var);
+	ADD_PRINTF("% +s",		var);
+	ADD_PRINTF("% #s",		var);
+	ADD_PRINTF("% #-s",		var);
+	ADD_PRINTF("% #-+s",		var);
 	ADD_PRINTF("%5s",		var);
+	ADD_PRINTF("%.5s",		var);
+	ADD_PRINTF("%5.2s",		var);
+	ADD_PRINTF("%3s",		var);
+	ADD_PRINTF("%.3s",		var);
+	ADD_PRINTF("%2s",		var);
+	ADD_PRINTF("%.2s",		var);
+	ADD_PRINTF("%2.2s",		var);
+	ADD_PRINTF("%-15s",		var);
+	ADD_PRINTF("%10s",		var);
+	ADD_PRINTF("%.10s",		var);
+	ADD_PRINTF("%0s",		var);
+	ADD_PRINTF("%.0s",		var);
+	ADD_PRINTF("%-+0s",		var);
+	ADD_PRINTF("%+0s",		var);
+	ADD_PRINTF("%#-+0s",		var);
+	ADD_PRINTF("% #-+0s",		var);
+	ADD_PRINTF("%03s",		var);
+	ADD_PRINTF("%-+03s",		var);
+	ADD_PRINTF("%+03s",		var);
+	ADD_PRINTF("%#-+03s",		var);
+	ADD_PRINTF("% #-+03s",		var);
+	ADD_PRINTF("%010s",		var);
+	ADD_PRINTF("%-+010s",		var);
+	ADD_PRINTF("%+010s",		var);
+	ADD_PRINTF("%#-+010s",		var);
+	ADD_PRINTF("% #-+010s",		var);
 }
 
 void	test_c(char c){
@@ -204,11 +421,46 @@ void	test_c(char c){
 	clock_t	t;
 	
 	ADD_PRINTF("%c",		c);
+	ADD_PRINTF("%.c",		c);
+	ADD_PRINTF("%-c",		c);
+	ADD_PRINTF("%-+c",		c);
+	ADD_PRINTF("%+c",		c);
+	ADD_PRINTF("%#c",		c);
+	ADD_PRINTF("%#-c",		c);
+	ADD_PRINTF("%#-+c",		c);
+	ADD_PRINTF("%#+c",		c);
+	ADD_PRINTF("% c",		c);
+	ADD_PRINTF("% -c",		c);
+	ADD_PRINTF("% -+c",		c);
+	ADD_PRINTF("% +c",		c);
+	ADD_PRINTF("% #c",		c);
+	ADD_PRINTF("% #-c",		c);
+	ADD_PRINTF("% #-+c",		c);
 	ADD_PRINTF("%5c", 		c);
-	ADD_PRINTF("%-5c", 		c);
-	ADD_PRINTF("% 05c",		c);
-	ADD_PRINTF("% 5c", 		c);
 	ADD_PRINTF("%.5c", 		c);
+	ADD_PRINTF("%-5c", 		c);
+	ADD_PRINTF("% 5c", 		c);
+	ADD_PRINTF("%3c",		c);
+	ADD_PRINTF("%.3c",		c);
+	ADD_PRINTF("%10c",		c);
+	ADD_PRINTF("%.10c",		c);
+	ADD_PRINTF("%0c",		c);
+	ADD_PRINTF("%.0c",		c);
+	ADD_PRINTF("%-+0c",		c);
+	ADD_PRINTF("%+0c",		c);
+	ADD_PRINTF("%#-+0c",		c);
+	ADD_PRINTF("% #-+0c",		c);
+	ADD_PRINTF("% 05c",		c);
+	ADD_PRINTF("%03c",		c);
+	ADD_PRINTF("%-+03c",		c);
+	ADD_PRINTF("%+03c",		c);
+	ADD_PRINTF("%#-+03c",		c);
+	ADD_PRINTF("% #-+03c",		c);
+	ADD_PRINTF("%010c",		c);
+	ADD_PRINTF("%-+010c",		c);
+	ADD_PRINTF("%+010c",		c);
+	ADD_PRINTF("%#-+010c",		c);
+	ADD_PRINTF("% #-+010c",		c);
 }
 
 void	test_x(unsigned int nb){
@@ -216,26 +468,139 @@ void	test_x(unsigned int nb){
 	int		ret2;
 	clock_t	t;
 	
+	ADD_PRINTF("%X",		nb);
+	ADD_PRINTF("%.X",		nb);
+	ADD_PRINTF("%+ .X",		nb);
 	ADD_PRINTF("%x",		nb);
+	ADD_PRINTF("%.x",		nb);
+	ADD_PRINTF("%-x",		nb);
+	ADD_PRINTF("%-+x",		nb);
+	ADD_PRINTF("%+x",		nb);
+	ADD_PRINTF("%+ .x",		nb);
+	ADD_PRINTF("%#x",		nb);
+	ADD_PRINTF("%#-x",		nb);
+	ADD_PRINTF("%#-+x",		nb);
+	ADD_PRINTF("%#+x",		nb);
+	ADD_PRINTF("% x",		nb);
+	ADD_PRINTF("% -x",		nb);
+	ADD_PRINTF("% -+x",		nb);
+	ADD_PRINTF("% +x",		nb);
+	ADD_PRINTF("% #x",		nb);
+	ADD_PRINTF("% #-x",		nb);
+	ADD_PRINTF("% #-+x",		nb);
+	ADD_PRINTF("%5X",		nb);
 	ADD_PRINTF("%5x",		nb);
-	ADD_PRINTF("%5.5x",		nb);
-	ADD_PRINTF("%-05.x",	nb);
+	ADD_PRINTF("%- 5.X",		nb);
+	ADD_PRINTF("%+ 5.X",		nb);
 	ADD_PRINTF("%- 5.x",	nb);
 	ADD_PRINTF("%+ 5.x",	nb);
-	ADD_PRINTF("%+ .x",		nb);
-	ADD_PRINTF("%.x",		nb);
-	ADD_PRINTF("%X",		nb);
-	ADD_PRINTF("%5X",		nb);
 	ADD_PRINTF("%5.5X",		nb);
-	ADD_PRINTF("%-05.X",	nb);
-	ADD_PRINTF("%- 5.X",	nb);
-	ADD_PRINTF("%+ 5.X",	nb);
-	ADD_PRINTF("%+ .X",		nb);
-	ADD_PRINTF("%.X",		nb);
+	ADD_PRINTF("%5.5x",		nb);
+	ADD_PRINTF("%3x",		nb);
+	ADD_PRINTF("%.3x",		nb);
+	ADD_PRINTF("%10x",		nb);
+	ADD_PRINTF("%.10x",		nb);
+	ADD_PRINTF("%0x",		nb);
+	ADD_PRINTF("%.0x",		nb);
+	ADD_PRINTF("%-+0x",		nb);
+	ADD_PRINTF("%+0x",		nb);
+	ADD_PRINTF("%#-+0x",		nb);
+	ADD_PRINTF("% #-+0x",		nb);
+	ADD_PRINTF("%-05.X",		nb);
+	ADD_PRINTF("%-05.x",	nb);
+	ADD_PRINTF("%03x",		nb);
+	ADD_PRINTF("%-+03x",		nb);
+	ADD_PRINTF("%+03x",		nb);
+	ADD_PRINTF("%#-+03x",		nb);
+	ADD_PRINTF("% #-+03x",		nb);
+	ADD_PRINTF("%010x",		nb);
+	ADD_PRINTF("%-+010x",		nb);
+	ADD_PRINTF("%+010x",		nb);
+	ADD_PRINTF("%#-+010x",		nb);
+	ADD_PRINTF("% #-+010x",		nb);
 }
 
+void	other_test(void)
+{
+	int		ret;
+	int		ret2;
+	clock_t	t;
+	
+	ADD_PRINTF("% %");
+	ADD_PRINTF("%#%");
+	ADD_PRINTF("%-%");
+	ADD_PRINTF("%+%");
+	ADD_PRINTF("%0%");
+	ADD_PRINTF("%3%");
+	ADD_PRINTF("%10%");
+	ADD_PRINTF("%.%");
+	ADD_PRINTF("%.0%");
+	ADD_PRINTF("%.3%");
+	ADD_PRINTF("%.10%");
+	ADD_PRINTF("% #%");
+	ADD_PRINTF("% -%");
+	ADD_PRINTF("% +%");
+	ADD_PRINTF("%#-%");
+	ADD_PRINTF("%#+%");
+	ADD_PRINTF("%-+%");
+	ADD_PRINTF("%+0%");
+	ADD_PRINTF("%03%");
+	ADD_PRINTF("%010%");
+	ADD_PRINTF("% #-%");
+	ADD_PRINTF("% -+%");
+	ADD_PRINTF("%#-+%");
+	ADD_PRINTF("%-+0%");
+	ADD_PRINTF("%+03%");
+	ADD_PRINTF("%+010%");
+	ADD_PRINTF("% #-+%");
+	ADD_PRINTF("%#-+0%");
+	ADD_PRINTF("%-+03%");
+	ADD_PRINTF("%-+010%");
+	ADD_PRINTF("% #-+0%");
+	ADD_PRINTF("%#-+03%");
+	ADD_PRINTF("%#-+010%");
+	ADD_PRINTF("% #-+03%");
+	ADD_PRINTF("% #-+010%");
+	ADD_PRINTF("% BLABLABLABLA");
+	ADD_PRINTF("%#BLABLABLABLA");
+	ADD_PRINTF("%-BLABLABLABLA");
+	ADD_PRINTF("%+BLABLABLABLA");
+	ADD_PRINTF("%0BLABLABLABLA");
+	ADD_PRINTF("%3BLABLABLABLA");
+	ADD_PRINTF("%10BLABLABLABLA");
+	ADD_PRINTF("%.BLABLABLABLA");
+	ADD_PRINTF("%.0BLABLABLABLA");
+	ADD_PRINTF("%.3BLABLABLABLA");
+	ADD_PRINTF("%.10BLABLABLABLA");
+	ADD_PRINTF("% #BLABLABLABLA");
+	ADD_PRINTF("% -BLABLABLABLA");
+	ADD_PRINTF("% +BLABLABLABLA");
+	ADD_PRINTF("%#-BLABLABLABLA");
+	ADD_PRINTF("%#+BLABLABLABLA");
+	ADD_PRINTF("%-+BLABLABLABLA");
+	ADD_PRINTF("%+0BLABLABLABLA");
+	ADD_PRINTF("%03BLABLABLABLA");
+	ADD_PRINTF("%010BLABLABLABLA");
+	ADD_PRINTF("% #-BLABLABLABLA");
+	ADD_PRINTF("% -+BLABLABLABLA");
+	ADD_PRINTF("%#-+BLABLABLABLA");
+	ADD_PRINTF("%-+0BLABLABLABLA");
+	ADD_PRINTF("%+03BLABLABLABLA");
+	ADD_PRINTF("%+010BLABLABLABLA");
+	ADD_PRINTF("% #-+BLABLABLABLA");
+	ADD_PRINTF("%#-+0BLABLABLABLA");
+	ADD_PRINTF("%-+03BLABLABLABLA");
+	ADD_PRINTF("%-+010BLABLABLABLA");
+	ADD_PRINTF("% #-+0BLABLABLABLA");
+	ADD_PRINTF("%#-+03BLABLABLABLA");
+	ADD_PRINTF("%#-+010BLABLABLABLA");
+	ADD_PRINTF("% #-+03BLABLABLABLA");
+	ADD_PRINTF("% #-+010BLABLABLABLA");
+}
+
+
 // test of https://github.com/acivita/test_ft_printf
-void	lot_test(void)
+void	activita_test(void)
 {
 	int		ret;
 	int		ret2;
