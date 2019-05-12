@@ -63,10 +63,10 @@ int	main(int ac, char **av)
 		test_f(-1.0003333);
 		test_f(1.00 / 3.00);
 		//%c
-		test_x(0);
-		test_x('*');
-		test_x('!');
-		test_x(-55);
+		test_c(0);
+		test_c('*');
+		test_c('!');
+		test_c(-55);
 		//%x
 		test_x(0);
 		test_x(-1526);
