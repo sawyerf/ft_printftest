@@ -5,3 +5,53 @@
 **a.out
 **lol*
 test
+*.txt
+*.o
+*.dsYM
+lol*
+lel*
+*.a
+*.swp
+*.swo
+*.out
+*.output
+*.log
+*:w
+*:W
+21sh
+42sh
+test*
+.vscode
+.DS_Store
+logger/.deps
+
+### C ###
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib

@@ -46,6 +46,13 @@ $(NAME): printre $(OBJ)
 	@make -C $(FT_PRINTF)
 	@gcc $(CFLAGS) $(DEBUG) $(OBJ) $(FT_PRINTF)libftprintf.a -o $(NAME)
 
+malloc: printre $(OBJ)
+	@printf "\033[0;32m[ft_printftest] Compilation [OK]\033[0;0m\n"
+	@make -C $(FT_PRINTF)
+	@$(CC) $(CFLAGS) -c src/malloc.c -o .obj/malloc.o
+	@gcc $(CFLAGS) $(DEBUG) $(OBJ) .obj/malloc.o $(FT_PRINTF)libftprintf.a -o $(NAME)
+
+
 clean:
 	@make -C $(FT_PRINTF) clean
 	@/bin/rm -f $(OBJ)
