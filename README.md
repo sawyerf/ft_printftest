@@ -4,9 +4,10 @@
 Outils de test pour ft_printf, possédant 2598 tests.
 
 # Installation
-1. Modifier la variable **FT_PRINTF** dans le makefile pour y mettre le chemin de votre ft_printf
-2. Faites un `make`
-3. Vous pouvez maintenant lancer `./test`
+1.  Modifier la variable **FT_PRINTF** dans le makefile pour y mettre le chemin de votre ft_printf
+2.  Faites un `make`
+2b. Faites un `make malloc` (si vous voulez tester la protection de vos malloc)
+3.  Vous pouvez maintenant lancer `./test`
 
 # options
 ```
