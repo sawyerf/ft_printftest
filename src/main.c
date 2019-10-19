@@ -1,10 +1,37 @@
 #include "printftest.h"
 
+#define BAR_SIZE 20
 clock_t time1 = 0;
 clock_t time2 = 0;
 int		test = 0;
 int		error = 0;
 int		debug = 0;
+
+
+char	*progress_bar(char *bar, int pourcent, int size)
+{
+	int c1;
+	int c2;
+	int ri;
+
+	c1 = 0;
+	ri = 0;
+	if (pourcent)
+		c1 = (pourcent * size) / 100;
+	c2 = size - c1;
+	while (c1)
+	{
+		strcpy(&bar[ri], "█");
+		ri += 3;
+		c1--;
+	}
+	if (c2)
+	{
+		memset(&bar[ri], ' ', c2);
+		bar[ri + c2] = 0;
+	}
+	return (bar);
+}
 
 int	main(int ac, char **av)
 {
@@ -97,11 +124,21 @@ int	main(int ac, char **av)
 		activita_test();
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
-    float t2 = ((float)time2)/CLOCKS_PER_SEC;
+	float t2 = ((float)time2)/CLOCKS_PER_SEC;
+	char bar[(BAR_SIZE + 1) * 3];
+
 	dprintf(2, "for %d tests:\n", test);
-	dprintf(2, "[time] ft_printf = %f\n", t1);
-	dprintf(2, "[time]    printf = %f\n", t2);
-	dprintf(2, "[time]    %f\n", t1/t2);
-	dprintf(2, "[time]    %f\n", (t2/t1) * 100);
+	if (t1 >= t2)
+	{
+		dprintf(2, "[time] ft_printf = %fs  |%s| %.2f%\n", t1, progress_bar(bar, (t2 * 100) / t1, BAR_SIZE), (t2 * 100) / t1);
+		dprintf(2, "[time]    printf = %fs  |%s| 100.00%\n", t2, progress_bar(bar, 100, 20));
+	}
+	else
+	{
+		dprintf(2, "[time] ft_printf = %fs  |%s| %.2f%\n", t1, progress_bar(bar, (int)((t2 * 100) / t1) % 100, BAR_SIZE), (t2 * 100) / t1);
+		dprintf(2, "[time]    printf = %fs  |%s| 100.00%\n", t2, progress_bar(bar, 0, 20));
+	}
+	dprintf(2, "[time]    %9fx\n", t1/t2);
+	dprintf(2, "[time]    %9f%\n", (t2/t1) * 100);
 	dprintf(2, "[error]   %d\n", error);
 }
