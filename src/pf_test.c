@@ -19,6 +19,7 @@ void	test_Z(void)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] test_Z()\n");
 	ADD_PRINTF("% Z", 123);
 	ADD_PRINTF("%#Z", 123);
 	ADD_PRINTF("%-Z", 123);
@@ -62,6 +63,7 @@ void	test_o(unsigned long o)
 	int		ret2;
 	clock_t	t;
 
+	dprintf(2, "\33[0;34m[START] test_o(%o)\n", o);
 	ADD_PRINTF("%o",		o);
 	ADD_PRINTF("%.o",		o);
 	ADD_PRINTF("%-o",		o);
@@ -106,6 +108,7 @@ void	test_d(int nb)
 	int		ret2;
 	clock_t	t;
 
+	dprintf(2, "\33[0;34m[START] test_d(%d)\n", nb);
 	ADD_PRINTF("%d",			nb);
 	ADD_PRINTF("%+d",			nb);
 	ADD_PRINTF("%0+d",			nb);
@@ -200,6 +203,7 @@ void	test_u(unsigned long u)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] test_u(%u)\n", u);
 	ADD_PRINTF("%u",		u);
 	ADD_PRINTF("%.u",		u);
 	ADD_PRINTF("%-u",		u);
@@ -260,6 +264,7 @@ void	test_p(void  *addr)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] test_p(%p)\n", addr);
 	ADD_PRINTF("%p",		addr);
 	ADD_PRINTF("%30p",		addr);
 	ADD_PRINTF("%30.30p",	addr);
@@ -313,6 +318,7 @@ void	test_f(float fl)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] test_f(%f)\n", fl);
 	ADD_PRINTF("%f",		fl);
 	ADD_PRINTF("%+f",		fl);
 	ADD_PRINTF("%0+f",		fl);
@@ -369,6 +375,7 @@ void	test_s(char *var)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] test_s(\"%s\")\n", var);
 	ADD_PRINTF("%s",		var);
 	ADD_PRINTF("%s",		var);
 	ADD_PRINTF("%.s",		var);
@@ -420,6 +427,7 @@ void	test_c(char c){
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] test_c(%c)\n", c);
 	ADD_PRINTF("%c",		c);
 	ADD_PRINTF("%.c",		c);
 	ADD_PRINTF("%-c",		c);
@@ -526,6 +534,7 @@ void	other_test(void)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] other_test()\n");
 	ADD_PRINTF("% %");
 	ADD_PRINTF("%#%");
 	ADD_PRINTF("%-%");
@@ -606,6 +615,7 @@ void	activita_test(void)
 	int		ret2;
 	clock_t	t;
 	
+	dprintf(2, "\33[0;34m[START] acivita_test()\n");
 	ADD_PRINTF("%d", 0);
 	ADD_PRINTF("%d", 123);
 	ADD_PRINTF("%d", 12345678);
@@ -2704,6 +2714,7 @@ void	random_doux(char *typ, int i)
 	char		*arg;
 	int		value;
 
+	dprintf(2, "\33[0;34m[START] random_%s(%d)\n", typ);
 	while (i)
 	{
 		arg = argGenerator(typ);
@@ -2722,6 +2733,7 @@ void	random_s(int i)
 	char		*arg;
 	char		*value;
 
+	dprintf(2, "\33[0;34m[START] random_s()\n");
 	while (i)
 	{
 		arg = argGenerator("s");
