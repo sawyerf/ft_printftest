@@ -11,7 +11,7 @@ Outil de test pour ft_printf, possédant 2598 tests.
 # options
 ```
 Usage:
-./test [-d] [nb_de_repetition]
+./test [-d] [type] [repetition]
 
 options:
 -d   affiche un message au debut d'un test (utile pour savoir d'où vient un crash)

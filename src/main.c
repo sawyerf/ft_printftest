@@ -35,11 +35,14 @@ char	*progress_bar(char *bar, int pourcent, int size)
 
 int	main(int ac, char **av)
 {
-	int count;
-	int max;
+	int	count;
+	int	max;
+	char	opt;
 
 	cpt_stdout();
 	count = 1;
+	opt = 0;
+	max = 1;
 	if (ac > 1)
 	{
 		if (!strcmp("-d", av[count]))
@@ -47,81 +50,112 @@ int	main(int ac, char **av)
 			debug = 1;
 			count++;
 		}
+		if (av[count] && strlen(av[count]) == 1 && isalpha(av[count][0]))
+		{
+			opt = av[count][0];
+			count++;
+		}
 		if (av[count] && isdigit(av[count][0]))
 			max = atoi(av[count]);
-		else
-			max = 1;
 	}
-	else
-		max = 1;
 	count = 0;
 	while (count++ < max)
 	{
 		//%d
-		test_d(-2147483648);
-		test_d(2147483647);
-		test_d(4294967295);
-		test_d(4294967295 + 589);
-		test_d(-2147483648 - 1);
-		test_d(-2147483648 - 15);
-		test_d(1232);
-		test_d(-100);
-		test_d(-2);
+		if (!opt || opt == 'd')
+		{
+			test_d(-2147483648);
+			test_d(2147483647);
+			test_d(4294967295);
+			test_d(4294967295 + 589);
+			test_d(-2147483648 - 1);
+			test_d(-2147483648 - 15);
+			test_d(1232);
+			test_d(-100);
+			test_d(-2);
+		}
 		//%s
-		char *s = malloc(sizeof(char) * 10000 + 1);
-		memset(s, '*', 10000);
-		test_s("abc\0efg");
-		free(s);
-		test_s("abc\0efg");
-		test_s("abc");
-		test_s("");
-		test_s(NULL);
-		test_s(0);
+		if (!opt || opt == 's')
+		{
+			char *s = malloc(sizeof(char) * 10000 + 1);
+			memset(s, '*', 10000);
+			test_s("abc\0efg");
+			free(s);
+			test_s("abc\0efg");
+			test_s("abc");
+			test_s("");
+			test_s(NULL);
+			test_s(0);
+		}
 		//%p
-		void *p = strdup("abc");
-		test_p(p);
-		free(p);
-		test_p(ft_printf);
-		test_p(NULL);
-		test_p(0);
+		if (!opt || opt == 'p')
+		{
+			void *p = strdup("abc");
+			test_p(p);
+			free(p);
+			test_p(ft_printf);
+			test_p(NULL);
+			test_p(0);
+		}
 		//%f
-		test_f(12313);
-		test_f(0.0);
-		test_f(0.00000000001);
-		test_f(-0.00000000001);
-		test_f(-1.0003333);
-		test_f(1.00 / 3.00);
-		//%c
-		test_c(0);
-		test_c('*');
-		test_c('!');
-		test_c(-55);
+		if (!opt || opt == 'f')
+		{
+			test_f(12313);
+			test_f(0.0);
+			test_f(0.00000000001);
+			test_f(-0.00000000001);
+			test_f(-1.0003333);
+			test_f(1.00 / 3.00);
+			//%c
+		}
+		if (!opt || opt == 'c')
+		{
+			test_c(0);
+			test_c('*');
+			test_c('!');
+			test_c(-55);
+		}
 		//%x
-		test_x(0);
-		test_x(-1526);
-		test_x(4294967295);
-		test_x(4294967295 + 589);
-		test_x(42);
+		if (!opt || opt == 'x')
+		{
+			test_x(0);
+			test_x(-1526);
+			test_x(4294967295);
+			test_x(4294967295 + 589);
+			test_x(42);
+		}
 		//%u
-		test_u(0);
-		test_u(42);
-		test_u(-1526);
-		test_u(4294967295);
-		test_u(4294967295 + 589);
-		test_u(1232);
-		test_u(-100);
-		test_u(-2);
+		if (!opt || opt == 'u')
+		{
+			test_u(0);
+			test_u(42);
+			test_u(-1526);
+			test_u(4294967295);
+			test_u(4294967295 + 589);
+			test_u(1232);
+			test_u(-100);
+			test_u(-2);
+		}
 		//%o
-		test_o(0);
-		test_o(42);
-		test_o(-1526);
-		test_o(4294967295);
-		test_o(4294967295 + 589);
+		if (!opt || opt == 'o')
+		{
+			test_o(0);
+			test_o(42);
+			test_o(-1526);
+			test_o(4294967295);
+			test_o(4294967295 + 589);
+		}
 		//%Z
-		test_Z();
+		if (!opt || opt == 'Z')
+		{
+			test_Z();
+		}
 		//other
-		other_test();
-		activita_test();
+		if (!opt)
+		{
+			other_test();
+			activita_test();
+		}
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
 	float t2 = ((float)time2)/CLOCKS_PER_SEC;
