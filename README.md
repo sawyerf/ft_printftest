@@ -1,14 +1,14 @@
 # ft_printftest
 
-# Description
+## Description
 Outil de test pour ft_printf, possédant 2598 tests.
 
-# Installation
+## Installation
 1.  Modifier la variable **FT_PRINTF** dans le makefile pour y mettre le chemin de votre ft_printf
 2.  Faites un `make` ou un `make malloc` (si vous voulez tester la protection de vos malloc)
 3.  Vous pouvez maintenant lancer `./test`
 
-# options
+## options
 ```
 Usage:
 ./test [-d] [nb_de_repetition]
@@ -17,5 +17,5 @@ options:
 -d   affiche un message au debut d'un test (utile pour savoir d'où vient un crash)
 ```
 
-# Screenshot
+## Screenshot
 ![Screenshot](https://sawyerf.github.io/ft_printftest/screenshot.png)
