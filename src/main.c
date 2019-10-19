@@ -73,6 +73,7 @@ int	main(int ac, char **av)
 			test_d(1232);
 			test_d(-100);
 			test_d(-2);
+			random_doux("d", 500);
 		}
 		//%s
 		if (!opt || opt == 's')
@@ -86,6 +87,7 @@ int	main(int ac, char **av)
 			test_s("");
 			test_s(NULL);
 			test_s(0);
+			random_s(500);
 		}
 		//%p
 		if (!opt || opt == 'p')
@@ -106,14 +108,15 @@ int	main(int ac, char **av)
 			test_f(-0.00000000001);
 			test_f(-1.0003333);
 			test_f(1.00 / 3.00);
-			//%c
 		}
+		//%c
 		if (!opt || opt == 'c')
 		{
 			test_c(0);
 			test_c('*');
 			test_c('!');
 			test_c(-55);
+			random_doux("c", 500);
 		}
 		//%x
 		if (!opt || opt == 'x')
@@ -123,6 +126,7 @@ int	main(int ac, char **av)
 			test_x(4294967295);
 			test_x(4294967295 + 589);
 			test_x(42);
+			random_doux("x", 500);
 		}
 		//%u
 		if (!opt || opt == 'u')
@@ -135,6 +139,7 @@ int	main(int ac, char **av)
 			test_u(1232);
 			test_u(-100);
 			test_u(-2);
+			random_doux("u", 500);
 		}
 		//%o
 		if (!opt || opt == 'o')
@@ -144,6 +149,7 @@ int	main(int ac, char **av)
 			test_o(-1526);
 			test_o(4294967295);
 			test_o(4294967295 + 589);
+			random_doux("o", 500);
 		}
 		//%Z
 		if (!opt || opt == 'Z')

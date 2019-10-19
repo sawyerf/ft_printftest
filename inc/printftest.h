@@ -47,9 +47,13 @@ void	test_o(unsigned long var);
 void	test_Z(void);
 void	other_test(void);
 void	activita_test(void);
+void	random_doux(char *typ, int i);
+void	random_s(int i);
 
 void	cpt_stdout(void);
 char	*get_stdout(void);
 
 void	strdel(char	**s);
+char	*argGenerator(char *typ);
+char	*stringGenerator(int i);
 #endif

@@ -1,7 +1,7 @@
 # ft_printftest
 
 ## Description
-Outil de test pour ft_printf, possédant 2598 tests.
+Outil de test pour ft_printf, possédant 2598 tests fixe.
 
 ## Installation
 1.  Modifier la variable **FT_PRINTF** dans le makefile pour y mettre le chemin de votre ft_printf

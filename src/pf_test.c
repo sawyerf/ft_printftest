@@ -2695,3 +2695,40 @@ void	activita_test(void)
 	ADD_PRINTF("% #-+03BLABLABLABLA");
 	ADD_PRINTF("% #-+010BLABLABLABLA");
 }
+
+void	random_doux(char *typ, int i)
+{
+	int		ret;
+	int		ret2;
+	clock_t	t;
+	char		*arg;
+	int		value;
+
+	while (i)
+	{
+		arg = argGenerator(typ);
+		value = rand();
+		ADD_PRINTF(arg, value);
+		strdel(&arg);
+		i--;
+	}
+}
+
+void	random_s(int i)
+{
+	int		ret;
+	int		ret2;
+	clock_t	t;
+	char		*arg;
+	char		*value;
+
+	while (i)
+	{
+		arg = argGenerator("s");
+		value = stringGenerator(100);
+		ADD_PRINTF(arg, value);
+		strdel(&arg);
+		strdel(&value);
+		i--;
+	}
+}
