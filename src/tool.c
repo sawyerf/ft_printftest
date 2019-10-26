@@ -101,4 +101,5 @@ char	*stringGenerator(int i)
 		i--;
 		s[i] = rand();
 	}
+	return (s);
 }
