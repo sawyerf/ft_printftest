@@ -47,6 +47,7 @@ void	test_o(unsigned long var);
 void	test_Z(void);
 void	other_test(void);
 void	activita_test(void);
+void	antoineb_test(void);
 void	random_doux(char *typ, int i);
 void	random_s(int i);
 

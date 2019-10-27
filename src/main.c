@@ -161,6 +161,7 @@ int	main(int ac, char **av)
 		{
 			other_test();
 			activita_test();
+			antoineb_test();
 		}
 	}
 	float t1 = ((float)time1)/CLOCKS_PER_SEC;
