@@ -1,7 +1,7 @@
 # ft_printftest
 
 ## Description
-Tester for the ft_printf, with 7765 tests.
+Tester for ft_printf, with 7765 tests.
 
 ## Installation
 1.  Change the value of **FT_PRINTF** in the makefile with the path of your ft_printf.
