@@ -18,11 +18,15 @@ Options:
 ```
 
 ## Example
-- Debug %s
-`./test -d s`
+- Debug %s:
+```
+./test -d s
+```
 
-- Speedtest with 500 repetitions
-`./test 500`
+- Speedtest with 500 repetitions:
+```
+./test 500
+```
 
 ## Screenshot
 ![Screenshot](https://sawyerf.github.io/ft_printftest/screenshot.png)
