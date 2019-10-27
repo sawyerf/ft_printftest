@@ -96,6 +96,7 @@ char	*stringGenerator(int i)
 		return (NULL);
 	if (!(s = malloc((i + 1) * sizeof(char))))
 		return (NULL);
+	s[i] = 0;
 	while (i)
 	{
 		i--;

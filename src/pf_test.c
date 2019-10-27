@@ -2714,7 +2714,7 @@ void	random_doux(char *typ, int i)
 	char		*arg;
 	int		value;
 
-	dprintf(2, "\33[0;34m[START] random_%s(%d)\n", typ);
+	dprintf(2, "\33[0;34m[START] random_%s(%d)\n", typ, i);
 	while (i)
 	{
 		arg = argGenerator(typ);
