@@ -67,13 +67,7 @@ char	*argGenerator(char *typ)
 	arg[0] = 0;
 	strcat(arg, "%");
 	if (rand() % 2)
-		strcat(arg, " ");
-	if (rand() % 2)
-		strcat(arg, "+");
-	if (rand() % 2)
 		strcat(arg, "-");
-	if (rand() % 2)
-		strcat(arg, "#");
 	if (rand() % 2)
 		strcat(arg, "0");
 	if (rand() % 2)
